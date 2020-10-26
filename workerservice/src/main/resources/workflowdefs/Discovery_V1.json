@@ -1,0 +1,85 @@
+{
+  "createTime": 1603468674794,
+  "createdBy": "DFX",
+  "name": "Discovery",
+  "description": "Discovery Event workflow",
+  "version": 2,
+  "tasks": [
+    {
+      "name": "gateway",
+      "taskReferenceName": "gateway",
+      "inputParameters": {},
+      "type": "FORK_JOIN",
+      "decisionCases": {},
+      "defaultCase": [],
+      "forkTasks": [
+        [
+          {
+            "name": "DLS",
+            "taskReferenceName": "DLS",
+            "inputParameters": {},
+            "type": "SIMPLE",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": []
+          }
+        ],
+        [
+          {
+            "name": "Classification",
+            "taskReferenceName": "Classification",
+            "inputParameters": {},
+            "type": "SIMPLE",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": []
+          }
+        ]
+      ],
+      "startDelay": 0,
+      "joinOn": [],
+      "optional": false,
+      "defaultExclusiveJoinTask": [],
+      "asyncComplete": false,
+      "loopOver": []
+    },
+    {
+      "name": "join",
+      "taskReferenceName": "join",
+      "inputParameters": {},
+      "type": "JOIN",
+      "decisionCases": {},
+      "defaultCase": [],
+      "forkTasks": [],
+      "startDelay": 0,
+      "joinOn": [
+        "Classification",
+        "DLS"
+      ],
+      "optional": false,
+      "defaultExclusiveJoinTask": [],
+      "asyncComplete": false,
+      "loopOver": []
+    }
+  ],
+  "inputParameters": [],
+  "outputParameters": {},
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "ownerEmail": "admin@dfx.com",
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0
+}

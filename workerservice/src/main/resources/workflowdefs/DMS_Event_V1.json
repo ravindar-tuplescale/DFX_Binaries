@@ -1,0 +1,88 @@
+{
+	"createdBy": "DFX",
+	"name": "DMS_Event",
+	"description": "DMS Event workflow",
+	"version": 1,
+	"tasks": [
+		{
+			"name": "gateway",
+			"taskReferenceName": "gateway",
+			"type": "FORK_JOIN",
+			"forkTasks": [
+				[
+					{
+						"name": "Synchronization",
+						"taskReferenceName": "Synchronization",
+						"retryCount": 3,
+						"timeoutSeconds": 300,
+						"inputKeys": [],
+						"outputKeys": [],
+						"timeoutPolicy": "TIME_OUT_WF",
+						"retryLogic": "FIXED",
+						"retryDelaySeconds": 10,
+						"responseTimeoutSeconds": 180,
+						"concurrentExecLimit": 50,
+						"inputTemplate": {},
+						"rateLimitPerFrequency": 100,
+						"rateLimitFrequencyInSeconds": 1,
+						"ownerEmail": "admin@dfx.com"
+					}
+				],
+				[
+					{
+						"name": "Classification",
+						"taskReferenceName": "Classification",
+						"retryCount": 3,
+						"timeoutSeconds": 300,
+						"inputKeys": [],
+						"outputKeys": [],
+						"timeoutPolicy": "TIME_OUT_WF",
+						"retryLogic": "FIXED",
+						"retryDelaySeconds": 10,
+						"responseTimeoutSeconds": 180,
+						"concurrentExecLimit": 50,
+						"inputTemplate": {},
+						"rateLimitPerFrequency": 100,
+						"rateLimitFrequencyInSeconds": 1,
+						"ownerEmail": "admin@dfx.com"
+					},
+					{
+						"createdBy": "",
+						"name": "DMSUpdate",
+						"taskReferenceName": "DMSUpdate",
+						"retryCount": 3,
+						"timeoutSeconds": 300,
+						"inputKeys": [],
+						"outputKeys": [],
+						"timeoutPolicy": "TIME_OUT_WF",
+						"retryLogic": "FIXED",
+						"retryDelaySeconds": 10,
+						"responseTimeoutSeconds": 180,
+						"concurrentExecLimit": 50,
+						"inputTemplate": {},
+						"rateLimitPerFrequency": 100,
+						"rateLimitFrequencyInSeconds": 1,
+						"ownerEmail": "admin@dfx.com"
+					}
+				]
+			]
+		},
+		{
+			"name": "join",
+			"taskReferenceName": "join",
+			"type": "JOIN",
+			"joinOn": [
+				"Synchronization",
+				"DMSUpdate"
+			]
+		}
+	],
+	"inputParameters": [],
+	"outputParameters": {},
+	"schemaVersion": 2,
+	"restartable": true,
+	"workflowStatusListenerEnabled": false,
+	"ownerEmail": "admin@dfx.com",
+	"timeoutPolicy": "ALERT_ONLY",
+	"timeoutSeconds": 0
+}

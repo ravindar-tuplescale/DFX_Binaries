@@ -1,0 +1,51 @@
+{
+	"createdBy": "DFX",
+	"name": "DLS_Event",
+	"description": "DLS Event workflow",
+	"version": 1,
+	"tasks": [
+		{
+			"name": "DLSOffline",
+			"taskReferenceName": "DLSOffline",
+			"retryCount": 3,
+			"timeoutSeconds": 300,
+			"inputKeys": [],
+			"outputKeys": [],
+			"timeoutPolicy": "TIME_OUT_WF",
+			"retryLogic": "FIXED",
+			"retryDelaySeconds": 10,
+			"responseTimeoutSeconds": 180,
+			"concurrentExecLimit": 50,
+			"inputTemplate": {},
+			"rateLimitPerFrequency": 100,
+			"rateLimitFrequencyInSeconds": 1,
+			"ownerEmail": "admin@dfx.com"
+		},
+		{
+			"createdBy": "",
+			"name": "DMSUpdate",
+			"taskReferenceName": "DMSUpdate",
+			"retryCount": 3,
+			"timeoutSeconds": 300,
+			"inputKeys": [],
+			"outputKeys": [],
+			"timeoutPolicy": "TIME_OUT_WF",
+			"retryLogic": "FIXED",
+			"retryDelaySeconds": 10,
+			"responseTimeoutSeconds": 180,
+			"concurrentExecLimit": 50,
+			"inputTemplate": {},
+			"rateLimitPerFrequency": 100,
+			"rateLimitFrequencyInSeconds": 1,
+			"ownerEmail": "admin@dfx.com"
+		}
+	],
+	"inputParameters": [],
+	"outputParameters": {},
+	"schemaVersion": 2,
+	"restartable": true,
+	"workflowStatusListenerEnabled": false,
+	"ownerEmail": "admin@dfx.com",
+	"timeoutPolicy": "ALERT_ONLY",
+	"timeoutSeconds": 0
+}

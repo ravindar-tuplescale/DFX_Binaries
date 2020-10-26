@@ -1,0 +1,51 @@
+{
+	"createdBy": "DFX",
+	"name": "CE_Event",
+	"description": "CE Event workflow",
+	"version": 1,
+	"tasks": [
+		{
+			"name": "ClassificationOffline",
+			"taskReferenceName": "ClassificationOffline",
+			"retryCount": 3,
+			"timeoutSeconds": 300,
+			"inputKeys": [],
+			"outputKeys": [],
+			"timeoutPolicy": "TIME_OUT_WF",
+			"retryLogic": "FIXED",
+			"retryDelaySeconds": 10,
+			"responseTimeoutSeconds": 180,
+			"concurrentExecLimit": 50,
+			"inputTemplate": {},
+			"rateLimitPerFrequency": 100,
+			"rateLimitFrequencyInSeconds": 1,
+			"ownerEmail": "admin@dfx.com"
+		},
+		{
+			"createdBy": "",
+			"name": "DMSUpdate",
+			"taskReferenceName": "DMSUpdate",
+			"retryCount": 3,
+			"timeoutSeconds": 300,
+			"inputKeys": [],
+			"outputKeys": [],
+			"timeoutPolicy": "TIME_OUT_WF",
+			"retryLogic": "FIXED",
+			"retryDelaySeconds": 10,
+			"responseTimeoutSeconds": 180,
+			"concurrentExecLimit": 50,
+			"inputTemplate": {},
+			"rateLimitPerFrequency": 100,
+			"rateLimitFrequencyInSeconds": 1,
+			"ownerEmail": "admin@dfx.com"
+		}
+	],
+	"inputParameters": [],
+	"outputParameters": {},
+	"schemaVersion": 2,
+	"restartable": true,
+	"workflowStatusListenerEnabled": false,
+	"ownerEmail": "admin@datafabricx.com",
+	"timeoutPolicy": "ALERT_ONLY",
+	"timeoutSeconds": 0
+}

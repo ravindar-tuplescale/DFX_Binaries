@@ -20,6 +20,7 @@ public class ClassificationOfflineWorker {
         
     }
 
+
     public TaskResult getTaskResult(TaskResult taskResult) {
 		// Register the output of the task
 

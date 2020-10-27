@@ -1,4 +1,4 @@
-<h2>Quick Start Guid:</h2>
+<h2>Quick Start Guide:</h2>
 
 <h4>Components:</h4>
 
@@ -44,7 +44,7 @@
       > mvn install:install-file -Dfile=nconductor-worker-library-0.0.5.jar -DgroupId=com.tuplescale.conductor  -DartifactId=nconductor-worker-library -Dversion=0.0.5 -Dpackaging=jar
 
 
-Start the microservice :
+<h4>Start the microservice :</h4>
 
   This is a maven project, we can import in any editor like eclipse or inteliji and run the service.
   once we start the service all the workflows under resources folder are created in the conductor server.
